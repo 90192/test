@@ -14,6 +14,3 @@ def content():
     url = request.form['url']
     text = get_content(url)
     return render_template('content.html', text=text)
-
-
-app.run()
