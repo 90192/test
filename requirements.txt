@@ -2,4 +2,4 @@ Flask==2.0.2
 selenium==4.8.3
 beautifulsoup4==4.11.2
 webdriver-manager==3.8.5
-chromedriver-binary
+temp==2020.7.2
