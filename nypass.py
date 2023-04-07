@@ -8,8 +8,10 @@ import tempfile
 def get_content(url):
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
     with tempfile.TemporaryDirectory() as tmp:
-        driver_path = ChromeDriverManager(cache_path=tmp).install()
+        driver_path = ChromeDriverManager(path=tmp).install()
         driver = webdriver.Chrome(driver_path, options=options)
     # driver = webdriver.Chrome(options=options,
     #                           service=Service(ChromeDriverManager().install())
