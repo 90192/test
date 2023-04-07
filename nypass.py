@@ -10,5 +10,6 @@ def get_content(url):
     driver = webdriver.Chrome(service=service, options=options)
     driver.get(url)
     content = driver.execute_script('return document.body.innerHTML;')
+    driver.quit()
     soup = bs(content, features='html.parser')
     return soup.get_text()
