@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup as bs
 def get_content(url):
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
-    service = Service(executable_path='driver/chromedriver')
+    service = Service(executable_path='chromedriver')
     driver = webdriver.Chrome(service=service, options=options)
     driver.get(url)
     content = driver.execute_script('return document.body.innerHTML;')
