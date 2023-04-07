@@ -1,21 +1,13 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup as bs
-import tempfile
 
 
 def get_content(url):
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
-    with tempfile.TemporaryDirectory() as tmp:
-        driver_path = ChromeDriverManager(path=tmp).install()
-        driver = webdriver.Chrome(driver_path, options=options)
-    # driver = webdriver.Chrome(options=options,
-    #                           service=Service(ChromeDriverManager().install())
-    #                           )
+    service = Service(executable_path='./driver/chromedriver')
+    driver = webdriver.Chrome(service=service, options=options)
     driver.get(url)
     content = driver.execute_script('return document.body.innerHTML;')
     soup = bs(content, features='html.parser')
