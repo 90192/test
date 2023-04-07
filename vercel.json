@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+      {
+          "src": "*.py",
+          "use": "@90192/nypass"
+      }
+  ],
+  "routes": [
+      {
+          "src": "(.*)",
+          "dest": "app.py"
+      }
+  ]
+}
