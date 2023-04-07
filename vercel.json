@@ -3,7 +3,7 @@
   "builds": [
       {
           "src": "*.py",
-          "use": "@90192/nypass"
+          "use": "@vercel/python"
       }
   ],
   "routes": [
