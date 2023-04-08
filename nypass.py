@@ -7,7 +7,7 @@ def get_content(url):
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
-    service = Service('driver/chromedriver')
+    service = Service('driver/chromedriver.exe')
     service.start()
     driver = webdriver.Remote(service.service_url)
     driver.get(url)
